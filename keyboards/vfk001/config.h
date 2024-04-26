@@ -23,11 +23,8 @@
 #define MATRIX_ROW_PINS { B6, E6, B4, B5  }
 #define DIODE_DIRECTION COL2ROW
 
-#define SOFT_SERIAL_PIN D2
+#define SPLIT_USB_DETECT 
 /* define the handedness of the keyboard. this keyboard will be connected with a cable from left half of the keyboard*/
 #define MASTER_LEFT
 
 #define DEBOUNCE 5
-
-#define SPLITS_KEYBOARD yes
-
