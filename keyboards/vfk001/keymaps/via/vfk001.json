@@ -1,7 +1,7 @@
 { 
 	"name": "vfk001",
-	"vendorId": "0x8036",
-	"productId": "0x2341",
+	"productId": "0x8036",
+	"vendorId": "0x7666",
 	"matrix": {"rows": 8, "cols": 5},
 	"layouts": {
 			"keymap": [
