@@ -5,59 +5,81 @@
 
 #pragma once
 
-#define MIRYOKU_LAYER_LIST \
-MIRYOKU_X(BASE,   "Base") \
-MIRYOKU_X(NUM,    "Num") \
-MIRYOKU_X(SYM,    "Sym") \
-MIRYOKU_X(FUN,    "Fun") \
-MIRYOKU_X(NAV,    "Nav") \
-MIRYOKU_X(TAP,    "Tap") \
-MIRYOKU_X(MOUSE,  "Mouse") \
+  /*
+   * Feature disable options
+   *  These options are also useful to firmware size reduction.
+   */
 
+  /* disable debug print */
+  //#define NO_DEBUG
 
+  /* disable print */
+  //#define NO_PRINT
 
+  /* disable action features */
+  //#define NO_ACTION_LAYER
+  //#define NO_ACTION_TAPPING
+  //#define NO_ACTION_ONESHOT
+
+  /* to use split keyboard */
+  #define SPLIT_USB_DETECT
+
+  /* define the handedness of the keyboard. this keyboard will be connected with a cable from left half of t  he keyboard*/
+  #define MASTER_LEFT
+
+  #define MATRIX_COL_PINS { C6, D4, D0, D1, D7}
+  #define MATRIX_ROW_PINS { B6, E6, B4, B5}
+
+  #define MATRIX_COL_PINS_RIGHT { D7, D1, D0, D4, C6 }
+  #define MATRIX_ROW_PINS_RIGHT { B6, E6, B4, B5 }
+
+  #define DIODE_DIRECTION COL2ROW
+  #define SOFT_SERIAL_PIN D2
+  #define DEBOUNCE 5
+
+#if defined (KEYBOARD_vfk_001)
+#define MIRYOKU_MAPPING( \
+      K00,  K01,  K02,  K03,  K04,         K05,  K06,  K07,  K08,  K09, \
+      K10,  K11,  K12,  K13,  K14,         K15,  K16,  K17,  K18,  K19, \
+      K20,  K21,  K22,  K23,  K24,         K25,  K26,  K27,  K28,  K29, \
+      N30,  N31,  K32,  K33,  K34,         K35,  K36,  K37,  N38,  N39 \
+) \
+LAYOUT_split_3x5_3( \
+         K00,  K01,  K02,  K03,  K04,         K05,  K06,  K07,  K08,  K09,      \
+         K10,  K11,  K12,  K13,  K14,         K15,  K16,  K17,  K18,  K19,     \
+         K20,  K21,  K22,  K23,  K24,         K25,  K26,  K27,  K28,  K29,     \
+                     K32,  K33,  K34,         K35,  K36,  K37 \
+)
 
 #define MIRYOKU_LAYER_BASE \
-&kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             &kp Y,             &kp U,             &kp I,             &kp O,             &kp P,             \
-U_MT(LGUI, A),     U_MT(LALT, S),     U_MT(LCTRL, D),    U_MT(LSHFT, F),    &kp G,             &kp H,             U_MT(LSHFT, J),    U_MT(LCTRL, K),    U_MT(LALT, L),     U_MT(LGUI, SEMI),   \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp V,             &kp B,             &kp N,             &kp M,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
-U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, TAB),U_LT(U_MOUSE, SPACE),U_LT(U_SYM, BSPC),  U_LT(U_NUM,RET), U_LT(U_FUN, DEL),  U_NP,              U_NP
-
-#define MIRYOKU_LAYER_NUM \
-&kp LBKT,          &kp N7,            &kp N8,            &kp N9,            &kp RBKT,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
-&kp SQT,           &kp N4,            &kp N5,            &kp N6,            &kp EQUAL,         U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
-&kp GRAVE,         &kp N1,            &kp N2,            &kp N3,            &kp BSLH,          U_NA,              &u_to_U_NUM,       &u_to_U_NAV,       &kp RALT,          U_NA,              \
-U_NP,              U_NP,              &kp DOT,           &kp N0,            &kp MINUS,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+KC_Q,              KC_W,              KC_E,              KC_R,              KC_T,              KC_Y,              KC_U,              KC_I,              KC_O,              KC_P,              \
+LGUI_T(KC_A),      LALT_T(KC_S),      LCTL_T(KC_D),      LSFT_T(KC_F),      KC_G,              KC_H,              LSFT_T(KC_J),      LCTL_T(KC_K),      LALT_T(KC_L),      LGUI_T(KC_QUOT),   \
+LT(U_BUTTON,KC_Z), ALGR_T(KC_X),      KC_C,              KC_V,              KC_B,              KC_N,              KC_M,              KC_COMM,           ALGR_T(KC_DOT),    LT(U_BUTTON,KC_SLSH),\
+U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
-&kp LBRC,          &kp AMPS,          &kp ASTRK,         &kp LPAR,          &kp RBRC,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
-&kp DOUBLE_QUOTES, &kp DLLR,          &kp PRCNT,         &kp CARET,         &kp PLUS,          U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
-&kp TILDE,         &kp EXCL,          &kp AT,            &kp HASH,          &kp PIPE,          U_NA,              &u_to_U_SYM,       &u_to_U_MOUSE,     &kp RALT,          U_NA,              \
-U_NP,              U_NP,              &kp LPAR,          &kp RPAR,          &kp UNDER,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
-
-#define MIRYOKU_LAYER_FUN \
-&kp F12,           &kp F7,            &kp F8,            &kp F9,            &kp PSCRN,         U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
-&kp F11,           &kp F4,            &kp F5,            &kp F6,            &kp SLCK,          U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
-&kp F10,           &kp F1,            &kp F2,            &kp F3,            &kp PAUSE_BREAK,   U_NA,              &u_to_U_FUN,       &u_to_U_MEDIA,     &kp RALT,          U_NA,              \
-U_NP,              U_NP,              &kp K_APP,         &kp TAB,           &kp SPACE,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+KC_QUOTE,        LSFT(KC_COMMA),        LSFT(KC_DOT),          LSFT(KC_QUOTE),        LSFT(KC_DOT),        LSFT(KC_7),                  U_NA,                         KC_LEFT_BRACKET,                    KC_RIGHT_BRACKET,                  LSFT(KC_5),     \
+LSFT(KC_1),      KC_MINUS,              LSFT(KC_EQUAL),        KC_EQUAL,              LSFT(KC_3),          LSFT(KC_BACKSLASH),          LSFT(KC_SEMICOLON),           LSFT(KC_9),                         LSFT(KC_0),                        LSFT(KC_SLASH),           \
+LSFT(KC_6),      KC_SLASH,              LSFT(KC_8),            KC_BACKSLASH,          U_NA,                LSFT(KC_GRAVE),              LSFT(KC_4),                   LSFT(KC_LEFT_BRACKET),              LSFT(KC_RIGHT_BRACKET),            LSFT(KC_2),              \
+U_NP,              U_NP,              U_NA,        U_NA,        U_NA,     U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
-U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      &u_to_U_VAL,       U_CPY,             U_PST,             &kp UP,            U_RDO,             U_UND,             \
-&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &u_caps_word,      &kp LEFT,          &kp DOWN,          &kp RIGHT,         U_CUT,         \
-U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_NAV,       U_NA,              &kp INS,           &kp HOME,          &kp PG_DN,         &kp PG_UP,         &kp END,           \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP
+TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
+KC_LCTL,           KC_LALT,           KC_LGUI,           KC_LSFT,           U_NA,              CW_TOGG,           KC_LEFT,           KC_DOWN,           KC_UP,             KC_RGHT,           \
+U_NA,              KC_ALGR,           TD(U_TD_U_NUM),    TD(U_TD_U_NAV),    U_NA,              KC_INS,            KC_HOME,           KC_PGDN,           KC_PGUP,           KC_END,            \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_BSPC,           KC_ENT ,           KC_DEL,            U_NP,              U_NP
+
+#define MIRYOKU_LAYER_NUM \
+KC_LBRC,           KC_7,              KC_8,              KC_9,              KC_RBRC,           U_NA,              TD(U_TD_U_BASE),   TD(U_TD_U_EXTRA),  TD(U_TD_U_TAP),    TD(U_TD_BOOT),     \
+KC_SCLN,           KC_4,              KC_5,              KC_6,              KC_EQL,            U_NA,              KC_LSFT,           KC_LGUI,           KC_LALT,           KC_LCTL,            \
+KC_GRV,            KC_1,              KC_2,              KC_3,              KC_BSLS,           U_NA,              TD(U_TD_U_NUM),    TD(U_TD_U_NAV),    KC_ALGR,           U_NA,              \
+U_NP,              U_NP,              KC_DOT,            KC_0,              KC_MINS,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+
+#define MIRYOKU_LAYER_FUN \
+KC_F12,            KC_F7,             KC_F8,             KC_F9,             KC_PSCR,           U_NA,              U_NA,              U_NA,             U_NA,               U_NA,     \
+KC_F11,            KC_F4,             KC_F5,             KC_F6,             KC_SCRL,           U_NA,              KC_LSFT,           KC_LGUI,          KC_LALT,            KC_LCTL,           \
+KC_F10,            KC_F1,             KC_F2,             KC_F3,             KC_PAUS,           U_NA,              U_NA,              U_NA,             U_NA,               U_NA,              \
+U_NP,              U_NP,              U_NA,              KC_TAB,            KC_SPC,            U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 
-#define MIRYOKU_LAYER_TAP \
-&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             &kp SEMI,           \
-&kp A,             &kp R,             &kp S,             &kp T,             &kp G,             &kp M,             &kp N,             &kp E,             &kp I,             &kp O,             \
-&kp Z,             &kp X,             &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         &kp DOT,           &kp SLASH,         \
-U_NP,              U_NP,              &kp ESC,           &kp TAB,         &kp SPACE,           &kp BSPC,           &kp RET,          &kp DEL,           U_NP,              U_NP
-
-#define MIRYOKU_LAYER_MOUSE \
-U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_CPY,             U_PST,             U_MS_U,            U_RDO,             U_UND,             \
-&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_NU,              U_MS_L,            U_MS_D,            U_MS_R,            U_CUT,             \
-U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_MOUSE,     U_NA,              U_NU,              U_WH_L,            U_WH_D,            U_WH_U,            U_WH_R,            \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_BTN2,            U_BTN1,            U_BTN3,            U_NP,              U_NP
-
-
+#endif

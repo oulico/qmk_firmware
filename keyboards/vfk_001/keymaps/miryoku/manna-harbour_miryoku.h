@@ -17,7 +17,7 @@ MIRYOKU_LAYER_LIST
 #define U_MACRO_VA_ARGS(macro, ...) macro(__VA_ARGS__)
 
 #if !defined (MIRYOKU_MAPPING)
-  #define MIRYOKU_MAPPING LAYOUT_miryoku
+  #define MIRYOKU_MAPPING LAYOUT_split_3x5_3
 #endif
 
 #define U_NP KC_NO // key is not present
