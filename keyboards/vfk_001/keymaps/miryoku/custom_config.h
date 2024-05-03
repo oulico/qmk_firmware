@@ -58,10 +58,11 @@ LT(U_BUTTON,KC_Z), ALGR_T(KC_X),      KC_C,              KC_V,              KC_B
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
-KC_QUOTE,        LSFT(KC_COMMA),        LSFT(KC_DOT),          LSFT(KC_QUOTE),        LSFT(KC_DOT),        LSFT(KC_7),                  U_NA,                         KC_LEFT_BRACKET,                    KC_RIGHT_BRACKET,                  LSFT(KC_5),     \
-LSFT(KC_1),      KC_MINUS,              LSFT(KC_EQUAL),        KC_EQUAL,              LSFT(KC_3),          LSFT(KC_BACKSLASH),          LSFT(KC_SEMICOLON),           LSFT(KC_9),                         LSFT(KC_0),                        LSFT(KC_SLASH),           \
-LSFT(KC_6),      KC_SLASH,              LSFT(KC_8),            KC_BACKSLASH,          U_NA,                LSFT(KC_GRAVE),              LSFT(KC_4),                   LSFT(KC_LEFT_BRACKET),              LSFT(KC_RIGHT_BRACKET),            LSFT(KC_2),              \
-U_NP,              U_NP,              U_NA,        U_NA,        U_NA,     U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+KC_LCBR,           KC_AMPR,           KC_ASTR,           KC_LPRN,           KC_RCBR,           U_NA,              TD(U_TD_U_BASE),   TD(U_TD_U_EXTRA),  TD(U_TD_U_TAP),    TD(U_TD_BOOT),     \
+KC_COLN,           KC_DLR,            KC_PERC,           KC_CIRC,           KC_PLUS,           U_NA,              KC_LSFT,           KC_LCTL,           KC_LALT,           KC_LGUI,           \
+KC_TILD,           KC_EXLM,           KC_AT,             KC_HASH,           KC_PIPE,           U_NA,              TD(U_TD_U_SYM),    TD(U_TD_U_MOUSE),  KC_ALGR,           U_NA,              \
+U_NP,              U_NP,              KC_LPRN,           KC_RPRN,           KC_UNDS,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+          U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
 TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
