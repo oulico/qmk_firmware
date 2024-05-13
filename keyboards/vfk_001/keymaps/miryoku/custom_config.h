@@ -79,7 +79,7 @@ U_NP,              U_NP,              KC_DOT,            KC_0,              KC_M
 KC_F12,            KC_F7,             KC_F8,             KC_F9,             LSFT(LCMD(KC_3)),           U_NA,              U_NA,              U_NA,             U_NA,               U_NA,     \
 KC_F11,            KC_F4,             KC_F5,             KC_F6,             LSFT(LCMD(KC_4)),           U_NA,              KC_LSFT,           KC_LCTL,          KC_LALT,            KC_LGUI,           \
 KC_F10,            KC_F1,             KC_F2,             KC_F3,             LSFT(LCMD(KC_5)),           U_NA,              U_NA,              U_NA,             U_NA,               U_NA,              \
-U_NP,              U_NP,              LCTL(KC_SPC),              KC_SPC,            KC_TAB,            U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+U_NP,              U_NP,              KC_F18,              KC_SPC,            KC_TAB,            U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_MOUSE \
 TD(U_TD_BOOT),     TD(U_TD_U_TAP),    TD(U_TD_U_EXTRA),  TD(U_TD_U_BASE),   U_NA,              LSFT(LCMD(KC_Z)),             LCMD(KC_V),             LCMD(KC_C),             LCMD(KC_X),             LCMD(KC_Z),             \
