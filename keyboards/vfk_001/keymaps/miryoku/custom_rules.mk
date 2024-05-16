@@ -3,3 +3,4 @@
 #
 SRC += features/select_word.c
 MIRYOKU_KLUDGE_THUMBCOMBOS=yes
+DEBOUNCE_TYPE = sym_eager_pk

@@ -35,7 +35,6 @@
 
   #define DIODE_DIRECTION COL2ROW
   #define SOFT_SERIAL_PIN D2
-  #define DEBOUNCE 5
 
 #if defined (KEYBOARD_vfk_001)
 #define MIRYOKU_MAPPING( \
